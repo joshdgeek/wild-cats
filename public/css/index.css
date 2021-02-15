@@ -1,0 +1,176 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+body{
+    height:100vh;
+
+}
+
+.container{
+    min-height:100vh;
+    margin-bottom: 24px;
+}
+
+nav{
+    line-height: 15px;
+    background-color: black;
+    position: relative;
+    
+}
+nav ul{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+nav ul h2{
+display: inline-block;
+color:yellow;
+margin-right: 20px;
+}
+nav ul li{
+    float: right;
+    margin: 7px;
+    
+}
+
+nav ul li a{
+    color:rgba(248, 207, 71, 0.877);
+    font-size:18px;
+    text-decoration: none;
+font-weight: bolder;
+}
+a:hover{
+    color:skyblue;
+    pointer-events: stroke;
+}
+#carts{
+    
+   float:right;
+    color:gold;
+    font-weight: 300;
+    font-size:18px;
+}
+button a{
+    color:white;
+}
+.main{
+    min-height:250px;
+    position: relative;
+    display:flex;
+    justify-content: center;
+   align-items: center;
+   padding:15px;
+}
+.main::before{
+ background-image: url("pizza1.jpeg");
+ background-repeat: no-repeat;
+ background-size:cover;
+content:"";
+top:0px;
+left:0px;
+bottom: 0px;
+right: 0px;
+position: absolute;
+filter:brightness(0.48);
+opacity: 0.8;
+}
+.mains{
+    color:rgb(206, 203, 17);
+    position: relative;
+    min-height:200px;
+   font-size:28px;
+}
+.mains button{
+   background: transparent;
+   min-height:25px;
+   padding:10px;
+   color:white;
+   font-size: 22px;
+   margin:10px;
+}
+#specialsbtn{
+    text-decoration: none;
+    color:white;
+}
+#samplehead{
+    padding:20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.flex{
+ display: flex;
+ justify-content: space-around;
+flex-wrap: wrap;
+}
+.box{
+    min-height:20px;
+
+    min-width:150px;
+    padding:25px;
+    position: relative;
+    margin:16px;
+    box-shadow: 0px 2px 10px 8px rgba(1, 1, 8,0.2);
+}
+.box img{
+height:200px;
+width:250px
+}
+
+.carts{
+    display:flex;
+    justify-content: center;
+    background-color: rgb(218, 17, 17);
+    height:23px;
+    width: 78px;
+    color: white;
+}
+
+.flex2{
+    display: flex;
+    justify-content: space-around;
+  
+   background-color: darkgray;
+   }
+
+   .flexbox{
+    min-height:20px;
+   
+    min-width:150px;
+    padding:25px;
+    position: relative;
+    margin:16px;
+    background-color: darkgray;
+}
+.flexbox p,li{
+    list-style: none;
+    margin:14px;
+}
+
+footer{
+    margin-top:-24px;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    border-collapse: collapse;
+}
+@media only screen and (max-width:520px){
+    .flex2{
+        font-size:14px;
+    }
+    .flexbox{
+        padding:0px;
+        margin: 1px;
+        min-width:64px;
+    }
+    .foothead{
+        font-size: 17px;
+        font-weight: 700;
+    }
+}

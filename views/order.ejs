@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>specials section </title>
+    <script  src="store.js" defer></script>
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/menu.css">
+ 
+
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <ul>
+                <h2>WILD-CATS</h2>
+                <li><a href="index.html">home</a></li>
+                <li><a href="/menu">menu</a></li>
+                <li><a href="services.html">service</a></li>
+             
+            </ul>
+            
+ 
+        </nav>
+              
+         <div class="main">
+             <div class="mains">
+                 <h1 style="font-family:arial;font-weight:bold;">Are you hungry?</h1>
+                 <h3>don't wait!!!</h3>
+                 <br/>
+                 <h3 style="color:white;font-family:sans-serif;">lets order some pizza right away?</h3>
+                  <button>check out our specials below </button>
+             </div>
+ 
+         </div> <!--main closing taag-->
+ 
+         <div class="samples">
+             <div id="samplehead"><h2>Most Ordered</h2></div>
+         </div>
+ 
+         <div class="flex">
+             
+                        <div class="box">
+                            
+                                <img src="./img/pizza1.jpeg" alt="" /> 
+                                <div >
+                                    <h2 align="center"> pizza onw  </h2>
+                                    <h3 style="color:blue;" align="center">$27 </h3>
+                                    <h4 style="color:blue;" align="center">specials</h4>
+                                
+                                    <div style="display:flex;justify-content: center; margin:8px;"> <!--align button to center-->
+                                        <button onclick="add()" class="cart"><b>+</b></button>
+                                        <button onclick="min()" class="cart"><b>-</b> </button>
+                                    </div> 
+                                </div>
+                    </div>  <!--box closing tag-->
+          
+           
+                    
+          
+ 
+             <div class="box">
+                       <img src="./img/pizza2.jpg" alt="" />
+                       <div >
+                         <h2 align="center">pizza two</h2>
+                         <h3 style="color:blue;" align="center">$37.00 each</h3>
+                         <h4 style="color:blue;" align="center">specials</h4>
+                       
+                         <div style="display:flex;justify-content: center; margin:8px;">  <!--align button to center-->
+                             <button onclick="add0()" class="cart"><b>+</b> </button>
+                             <button onclick="min0()" class="cart"><b>-</b> </button>
+                         </div> 
+                  
+                     </div> <!--box closing tag-->
+             </div>
+ 
+             <div class="box">
+                     <img src="./img/pizza1.jpeg" alt="" />
+               <div >
+                 <h2 align="center">pizza three</h2>
+                   <h2 style="color:blue;" align="center">$37.00 each</h2>
+                   <h4 style="color:blue;" align="center">specials</h4>
+                 
+                   <div style="display:flex;justify-content: center; margin:8px;"> <!--align button to center-->
+                       <button onclick="add1()" class="cart"><b>+</b> </button>
+                       <button onclick="min1()" class="cart"> <b>-</b></button>
+                   </div> 
+               
+                 </div>
+                 
+             </div> <!--box closing tag-->
+ 
+         </div> <!--flex closing tag-->
+
+           <div id="menus">
+               <h2 id="menu-head">Our Menu</h2>
+               <div class="table">
+
+                <table border="1 solid blue">
+                    <th align="center">CART</th>
+                    <tr>
+                        <td><h3  align="center">Item</h3></td>
+                        <td><h3 align="center"> Quantity</h3></td>
+                        <td><h3 align="center">Price</h3></td>
+                    </tr>
+
+                    <tr>
+                        <td><h3 align="center"><h3>Pizza one</h3></td>
+                        <td><h3 align="center"><div id="qty" ></div></h3></td>
+                        <td><h3 align="center"><div class="price"></div></h3></td>
+                    </tr>
+
+                    <tr>
+                        <td><h3 align="center"><h3>Pizza two</h3></td>
+                        <td><h3 align="center"><div id="qty1" ></div></h3></td>
+                        <td><h3 align="center"><div class="price0"></div></h3></td>
+                    </tr>
+
+                    <tr>
+                        <td><h3 align="center"><h3>Pizza three</h3></td>
+                        <td><h3 align="center"><div id="qty2" ></div></h3></td>
+                        <td><h3 align="center"><div class="price1"></div></h3></td>
+                    </tr>
+
+                    <tr>
+                        <td><b>TOTAL</b></td>
+                        <td><div align="center" id="total"></div></td>
+                        <td>
+                            <b id="cartNumber"></b>
+                        </td>
+                    </tr>
+
+
+                </table>
+                </div>
+                    <div class="form">
+                        <form>
+                            <script src="https://js.paystack.co/v1/inline.js"></script>
+                            <label for="fieldName"> Name</label>
+                            <input type="text" name="name" required><br>
+
+                            <label for="fieldEmail"> E-mail</label>
+                            <input type="text" name="Email" required> <br>
+
+                            <label for="address"> Address</label>
+                            <input type="text" name="address" value="your location"/><br>
+
+                            <div class="btn">
+                                
+                                <button type="button" onclick="payWithPaystack()"><h2>ORDER NOW</h2></button>
+                                <div align="center" id="errDiv"></div>
+                            </div>
+                        </form>
+                    </div>
+
+           </div>  <!--menu closing tag-->
+    </div>  
+   
+    <footer style="background-color: skyblue;">
+        <h3>JOSHDGEEK</h3>
+    </footer>
+</body>
+</html>
+
+<script>
+    
+    let f = "<%- publicKey %>"
+    function payWithPaystack(){
+        let total = document.querySelector("#cartNumber").textContent
+        let splitTotal = total.split(",")
+        console.log(splitTotal)
+        let price = []
+        for (let i of splitTotal){
+            for (let p of i){
+                let n = parseInt(p)
+                if(Number.isInteger(n)){
+                    price.push(n)
+                }
+            }
+        }    
+        let priceTotal = price.join("")
+        console.log(priceTotal)
+
+
+        var handler = PaystackPop.setup({
+            key: f,
+            email:"mhiztaaustin@gmail.com",
+            amount: priceTotal,
+            ref:""+ Math.floor((Math.random()*1000000000) + 1),
+            matadata:{
+                custom_fields:[
+                    {
+                        display_name:"mobile number",
+                        variable_name:"mobile number",
+                        value:"+2348012345678"
+                    }
+                ]
+            },
+            callback: function(response){
+                alert("success");
+
+            },
+            onClose: function(){
+                alert("window closed")
+            }
+        })
+        handler.openIframe()
+    }
+</script>
