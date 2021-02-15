@@ -1,3 +1,4 @@
+require ("dotenv").config();
 const express = require("express")
 const app = express();
 app.set("view engine","ejs");
@@ -9,7 +10,7 @@ app.get("/",(req,res)=>{
 })
 
 app.get("/order",(req,res)=>{
-    res.render("order",{publicKey:"pk_test_e09a638efc62a875b398d315906c240ca0225caa"})// key cannot be public
+    res.render("order",{publicKey:process.env.pkey})// key cannot be public
 })
 
 
