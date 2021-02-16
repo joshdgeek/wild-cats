@@ -95,8 +95,3 @@ function update(){
    cartNumber.innerHTML = `<b>N${tots}</b>`
 }
 
-let t = 7
-module.exports = t
-//pk_test_032418bcb81a1197a923e1bd2b445079a4b0a00d
-
-
